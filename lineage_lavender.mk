@@ -8,26 +8,17 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common KOSP stuff
-$(call inherit-product, vendor/krypton/config/common_full_phone.mk)
+# Inherit some common FLOS stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from lavender device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 $(call inherit-product, $(LOCAL_PATH)/device-hidl.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := krypton_lavender
+PRODUCT_NAME := lineage_lavender
 PRODUCT_DEVICE := lavender
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-# KOSP Flags
-OFFICIAL_BUILD := true
-TARGET_BUILD_VIA_BROWSER := false
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRIVATE_BUILD_DESC="raven-user 12 SP2A.220405.004 8233519 release-keys"
-
-BUILD_FINGERPRINT :="google/raven/raven:12/SP2A.220405.004/8233519:user/release-keys"
