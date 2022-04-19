@@ -16,10 +16,13 @@ TARGET_SCREEN_WIDTH := 1080
 # Indicate the first api level the device has been commercially launched on
 PRODUCT_SHIPPING_API_LEVEL := 28
 
+# Board
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := sdm660
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-krypton
+    $(LOCAL_PATH)/overlay
 
 # Display Device Config
 PRODUCT_COPY_FILES += \
